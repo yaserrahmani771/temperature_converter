@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Temperature</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #converter {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+      input,
+      select,
+      button {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 90%;
+      }
+      button {
+        background-color: #0088cc;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #005f99;
+      }
+      #result {
+        margin-top: 15px;
+        font-size: 1.2em;
+        color: #333;
+      }
+      #history {
+        margin-top: 20px;
+        padding: 0;
+        list-style: none;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      #history li {
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+      }
+      #history li:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
+      #history li:nth-child(even) {
+        background-color: #eeeeee;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Temperature Changer</h2>
+      <label for="temp">Enter the Temperature</label>
+      <input type="number" id="temp" placeholder="Enter Temperature" required />
+      <select id="fromUnit">
+        <option value="Celcius">Celcius</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+      </select>
+      <select id="toUnit">
+        <option value="Celcius">Celcius</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+      </select>
+      <button onclick="convert()">Convert</button>
+      <button onclick="clearFields()">Clear</button>
+      <button onclick="clearHistory()">Clear History</button>
+      <p id="result">result:</p>
+      <h3>Convertion History</h3>
+      <ul id="history"></ul>
+    </div>
+  </body>
+  <script src="temp.js"></script>
+</html>
